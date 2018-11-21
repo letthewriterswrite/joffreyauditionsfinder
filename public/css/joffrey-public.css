@@ -1,0 +1,70 @@
+.backgroundGradient {
+    background-image: linear-gradient(#b8b8b8,white);
+}
+.tab {
+    display: none;
+}
+
+.joffrey-sidenav {
+
+    height: 100%;
+    width: 325px;
+    position: fixed;
+    left: -300px;
+    z-index: 999;
+    padding: 15px;
+	background-size: cover; 
+	background-image: url('https://www.joffreyballetschool.com/summer/audition/audcoverfin.gif');
+    text-align: center;
+    opacity: 1;
+    transition:opacity 1s ease, left 2s ease;
+
+
+}
+    
+.joffrey-sidenav-active {
+    height: 100%;
+    width: 325px;
+    position: fixed;
+    z-index: 999;
+    padding: 15px;
+    background-size: cover; 
+	background-image: url('https://www.joffreyballetschool.com/summer/audition/audcoverfin.gif');
+    opacity: 1;
+    text-align: center;
+    /*width: 40%;*/
+    left: 0;
+    transition:opacity 1s ease,left 2s ease; 
+}
+
+.transparent-active {
+    opacity: 1;
+    transition: opacity 2s ease;
+}
+.transparent {
+    opacity: 0;
+    transition: opacity 1s ease 1s;
+}
+
+#findaudition-btn
+{
+    position: absolute;
+    right: -240px;
+    top: 35%;
+    opacity: 1;
+    /* height: 100px; */
+    background-color: #4198c2b5;
+    border: 0px;
+    transform: rotate(270deg);
+    font-size: 30px;
+    padding-left: 55px;
+    padding-right: 55px;
+}
+.btnaud {
+    display: inline-block;
+padding: 15px;
+        background-color: #398dbab0;
+border: 0px;
+    font-weight: bold;
+color: #fff;
+}
