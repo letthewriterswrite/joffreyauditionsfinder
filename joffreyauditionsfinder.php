@@ -266,7 +266,7 @@ function joffrey_display_form () {
            </option>
 
                 </select>
-                <button type="button" id="selectState" class="form-control">Submit State</button>
+                <button type="button" id="selectState" class="form-control btnaud">Submit State</button>
             </div>
 
     <!--        <div class="form-group tab">
