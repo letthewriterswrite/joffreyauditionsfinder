@@ -6,6 +6,7 @@ if ( !defined('ABSPATH')){
     
 }
 
+//Not used because for the moment, it's better to enqueue at the top of the Form in joffreyauditionsfinder.php
 function joffreyauditionsfinder_enqueue_style_public()
 {
     /* wp_enqueue_style(
@@ -18,7 +19,7 @@ function joffreyauditionsfinder_enqueue_style_public()
     
     $src = plugin_dir_url(__FILE__) . 'public/css/joffrey-public.css';
     
-    wp_enqueue_style('joffrey-public-style',$src,array('twentyseventeen-style'),null,'all');
+    //wp_enqueue_style('joffrey-public-style',$src,array('twentyseventeen-style'),null,'all');
     
     /*
     $data = '        .tab {
@@ -65,6 +66,7 @@ function joffreyauditionsfinder_enqueue_style_public()
 
 //add_action('wp_enqueue_scripts','joffreyauditionsfinder_enqueue_style_public');
 
+//Not used because for the moment, it's better to enqueue at the top of the Form in joffreyauditionsfinder.php
 function joffreyauditionsfinder_enqueue_script_public()
 {
     /*
@@ -173,7 +175,7 @@ var addresses = [{"text":"Alabama","id":"12229-14492","value":"12229,14492"},{"t
     wp_add_inline_script('joffrey-public-js', $data);
 }
 
-add_action('wp_enqueue_scripts','joffreyauditionsfinder_enqueue_script_public');
+//add_action('wp_enqueue_scripts','joffreyauditionsfinder_enqueue_script_public');
 
 
 /*
