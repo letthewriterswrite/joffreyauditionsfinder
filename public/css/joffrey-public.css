@@ -68,3 +68,20 @@ border: 0px;
     font-weight: bold;
 color: #fff;
 }
+
+@media (max-width:376px)
+{
+    #findaudition-btn
+    {
+       font-size: 10px;
+       right: -110px;
+       position: absolute;
+       padding-bottom: 0;
+       padding-top: 0;
+    }
+    
+    .joffrey-sidenav
+    {
+        left: -330px;
+    }
+}
