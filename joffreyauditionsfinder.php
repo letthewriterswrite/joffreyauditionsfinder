@@ -46,7 +46,9 @@ function joffrey_display_form () {
     <div class="joffrey-sidenav" id="joffrey-sidenav">
 
             <form method="get" id="auditionForm" action="https://summer.joffreyballetschool.com/auditions-dates-and-locations?post_type=tribe_events&eventDisplay=default" onkeypress="return event.keyCode != 13;" class="transparent">
-            <h1>Find Your Audition</h1>
+<h1 style="color:  #fff;line-height: 21pt;">Summer of 2019</h1>
+<hr/>
+            <h1 style="color:  #83d0c9;line-height: 21pt;">Find Your <br>Summer Audition</h1><br>
 
     <!--            <div class="tab form-group">Where are you located?
                     <input type="hidden" name="tribe-bar-geoloc-lat" id="tribe-bar-geoloc-lat">
