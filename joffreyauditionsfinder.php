@@ -80,6 +80,9 @@ function joffrey_display_form () {
            <option class="select2-results-dept-0 select2-result select2-result-selectable" role="presentation">
               Belo Horizonte
            </option>
+                      <option class="select2-results-dept-0 select2-result select2-result-selectable" role="presentation">
+              Benito Juárez
+           </option>
            <option class="select2-results-dept-0 select2-result select2-result-selectable" role="presentation">
               British Columbia
            </option>
@@ -103,6 +106,9 @@ function joffrey_display_form () {
            </option>
            <option class="select2-results-dept-0 select2-result select2-result-selectable" role="presentation">
               Connecticut
+           </option>
+                      <option class="select2-results-dept-0 select2-result select2-result-selectable" role="presentation">
+              DC
            </option>
            <option class="select2-results-dept-0 select2-result select2-result-selectable" role="presentation">
               Dublin
@@ -145,6 +151,9 @@ function joffrey_display_form () {
            </option>
            <option class="select2-results-dept-0 select2-result select2-result-selectable" role="presentation">
               Louisiana
+           </option>
+                      <option class="select2-results-dept-0 select2-result select2-result-selectable" role="presentation">
+              Madrid
            </option>
            <option class="select2-results-dept-0 select2-result select2-result-selectable" role="presentation">
               Maine
@@ -251,6 +260,9 @@ function joffrey_display_form () {
            <option class="select2-results-dept-0 select2-result select2-result-selectable" role="presentation">
               Utah
            </option>
+                      <option class="select2-results-dept-0 select2-result select2-result-selectable" role="presentation">
+              Valencia
+           </option>
            <option class="select2-results-dept-0 select2-result select2-result-selectable" role="presentation">
               Verona
            </option>
@@ -265,6 +277,9 @@ function joffrey_display_form () {
            </option>
            <option class="select2-results-dept-0 select2-result select2-result-selectable" role="presentation">
               Wisconsin
+           </option>
+                      <option class="select2-results-dept-0 select2-result select2-result-selectable" role="presentation">
+              Yucatan
            </option>
 
                 </select>
@@ -305,6 +320,10 @@ function joffrey_display_form () {
         </div>
 
 <?php }
+/*Experimenting with pulling venu data directly from tables
+        global $wpdb;
+        $venues = $wpdb->get_results("SELECT * FROM `sb_postmeta` WHERE `meta_key` LIKE '%_menu%'");
+        var_dump($venues);*/
     }
     add_action('wp_head','joffrey_display_form');
     ?>
