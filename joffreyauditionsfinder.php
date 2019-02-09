@@ -25,6 +25,7 @@ if(is_admin())
 }
 //Not used because for the moment, it's better to enqueue at the top of the Form in joffreyauditionsfinder.php
 //require_once plugin_dir_path(__FILE__) . 'public/joffrey-form.php';
+//Experimenting with pulling venu data directly from tables
 
 
 function joffrey_display_form () {
@@ -41,11 +42,44 @@ function joffrey_display_form () {
         
         $src = plugin_dir_url(__FILE__) . 'public/css/joffrey-public.css';
         wp_enqueue_style('joffrey-public-style',$src,array(),null,'all');
+        
+            function compareByState($a,$b)
+    {
+        return strcmp($a->meta_value,$b->meta_value);
+    }
+        global $wpdb;
+        $venues = $wpdb->get_results("SELECT * FROM `sb_postmeta` WHERE `meta_key` LIKE '_VenueProvince");
+        usort($venues,"compareByState");
+        
+        
+        $rebuilt_array = array();
+        
+        $i = 0;
+
+        while ($i < count($venues))
+        {
+            //Creates a sub array 
+            $rebuilt_array[$i] = array("text" => $venues[$i]->meta_value,"id" => $venues[$i]->post_id);
+            $k = $i +1;
+
+                while ($venues[$i]->meta_value == $venues[$k]->meta_value)
+                {
+                    $rebuilt_array[$i]["id"] .= "-" . $venues[$k]->post_id;
+                    $k++;
+                }
+            $i=$k;
+        } 
+        $j_r=json_encode(array_values($rebuilt_array));
+        
+
+        
+        
+        
 ?>
 
     <div class="joffrey-sidenav" id="joffrey-sidenav">
 
-            <form method="get" id="auditionForm" action="https://summer.joffreyballetschool.com/auditions-dates-and-locations?post_type=tribe_events&eventDisplay=default" onkeypress="return event.keyCode != 13;" class="transparent">
+            <form data-address="<?php  echo esc_attr($j_r);  ?>" method="get" id="auditionForm" action="https://summer.joffreyballetschool.com/auditions-dates-and-locations?post_type=tribe_events&eventDisplay=default" onkeypress="return event.keyCode != 13;" class="transparent">
 <h1 style="color:  #fff;line-height: 21pt;">Summer of 2019</h1>
 <hr/>
             <h1 style="color:  #83d0c9;line-height: 21pt;">Find Your <br>Summer Audition</h1><br>
@@ -320,10 +354,7 @@ function joffrey_display_form () {
         </div>
 
 <?php }
-/*Experimenting with pulling venu data directly from tables
-        global $wpdb;
-        $venues = $wpdb->get_results("SELECT * FROM `sb_postmeta` WHERE `meta_key` LIKE '%_menu%'");
-        var_dump($venues);*/
+
     }
     add_action('wp_head','joffrey_display_form');
     ?>
